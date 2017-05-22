@@ -24,23 +24,7 @@ class SimpleCalculator
 
 end
 
-class FancyCalculator
-
-  def add(first_number, second_number)
-    first_number + second_number
-  end
-
-  def subtract(first_number, second_number)
-    first_number - second_number
-  end
-
-  def multiply(first_number, second_number)
-    first_number * second_number
-  end
-
-  def divide(first_number, second_number)
-    first_number / second_number
-  end
+class FancyCalculator < SimpleCalculator
 
   def square_root(number)
     Math.sqrt(number)
@@ -48,27 +32,7 @@ class FancyCalculator
 
 end
 
-class WhizBangCalculator
-
-  def add(first_number, second_number)
-    first_number + second_number
-  end
-
-  def subtract(first_number, second_number)
-    first_number - second_number
-  end
-
-  def multiply(first_number, second_number)
-    first_number * second_number
-  end
-
-  def divide(first_number, second_number)
-    first_number / second_number
-  end
-
-  def square_root(number)
-    Math.sqrt(number)
-  end
+class WhizBangCalculator < SimpleCalculator
 
   def hypotenuse(first_number, second_number)
     Math.hypot(first_number, second_number)
@@ -84,3 +48,17 @@ end
 
 # Copy your driver code from the previous exercise and more below:
 
+adding = FancyCalculator.new.add(1, 2)
+p adding
+
+sqr = FancyCalculator.new.square_root(4)
+p sqr
+
+dividing = FancyCalculator.new.divide(8, 2)
+p dividing
+
+hypotenuse_test = WhizBangCalculator.new.hypotenuse(22, 17)
+p hypotenuse_test
+
+sanity_check = WhizBangCalculator.new.add(1, 1)
+p sanity_check
